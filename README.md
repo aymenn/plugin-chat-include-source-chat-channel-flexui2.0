@@ -1,4 +1,4 @@
-This repo provides a Flex UI 2.0 adaptation of the [Flex UI 1.x one by provided by Twilio Professional Services](https://github.com/twilio-professional-services/plugin-chat-include-source-chat-channel.git)
+This repo provides a Flex UI 2.0 adaptation of the [Flex UI 1.x one provided by Twilio Professional Services](https://github.com/twilio-professional-services/plugin-chat-include-source-chat-channel.git)
 
 # Flex Plugin to Include Source Chat Channel
 
