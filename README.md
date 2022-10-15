@@ -48,4 +48,6 @@ twilio flex:plugins:deploy --major --changelog "Notes for this version" --descri
 ```
 For more details on deploying your plugin, refer to the [deploying your plugin guide](https://www.twilio.com/docs/flex/plugins#deploying-your-plugin).
 
+# Disclaimer
 
+This software is to be considered "sample code", and is provided "as-is" to the user with no warranty or responsibility to support the use or implementation of this software.
