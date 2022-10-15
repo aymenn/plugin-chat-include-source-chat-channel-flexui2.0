@@ -1,16 +1,10 @@
+This repo provides a Flex UI 2.0 adaptation of the [Flex UI 1.x one by provided by Twilio Professional Services](https://github.com/twilio-professional-services/plugin-chat-include-source-chat-channel.git)
+
 # Flex Plugin to Include Source Chat Channel
 
 This is a very basic Flex Chat plugin to read a `sourceChatChannelSid` task attribute, and render the message history (from that "source" chat conversation) in a separate "History" tab within the Task Canvas. The inputs on that "History" tab are disabled - since the agent is probably not a participant in that chat channel.
 
 The use case here is when a chat task is created from another chat conversation - such as when a customer requests to chat to an agent via an otherwise automated chat conversation managed through a Studio flow, against a different Twilio phone number (say a short code), and where there's a need to give the agent immediate access to that other chat conversation for context. 
-
-## Long-Lived Channel Precautions
-
-If you use long-lived channels, there's the potential for a new task to arrive for a chat channel that's still being wrapped up by your agent. Clicking "End Chat" on a long-lived chat task will only clear the proxy session between Twilio and the customer (but will keep the channel active). Therefore a further message from the customer would lead to a new proxy session and a new task - using the same long-lived chat channel.
-
-The agent shouldn’t try to handle multiple tasks for the same channel at once. Otherwise when they hit "Complete" on one of those tasks - they will be removed from the channel, thus impacting the other task(s) that share that same chat channel.
-
-Twilio Professional Services have a [standalone plugin](https://github.com/twilio-professional-services/plugin-alert-on-second-task-for-same-chat-channel) to help mitigate against this scenario, by guiding the agent towards wrapping up the existing task before accepting the new one. Fundamentally , this is a product bug for which these is an existing JIRA open with Twilio's Flex UI team.
 
 ## Injecting the sourceChatChannelSid attribute
 
@@ -28,26 +22,10 @@ Twilio Flex Plugins allow you to customize the appearance and behavior of [Twili
 
 ## Setup
 
-Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com). We support Node >= 10.12 (and recommend the _even_ versions of Node). Afterwards, install the dependencies by running `npm install`:
+### Prerequisites
 
-```bash
-cd 
-
-# If you use npm
-npm install
-```
-
-Next, please install the [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart) by running:
-
-```bash
-brew tap twilio/brew && brew install twilio
-```
-
-Finally, install the [Flex Plugin extension](https://github.com/twilio-labs/plugin-flex) for the Twilio CLI:
-
-```bash
-twilio plugins:install @twilio-labs/plugin-flex
-```
+- [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com). We support Node >= 10.12 and this repo was tested with v12.18.3
+- [Flex Plugins CLI](https://www.twilio.com/docs/flex/developer/plugins/cli/install). This repo was built with version 5.2.0
 
 ## Development
 
